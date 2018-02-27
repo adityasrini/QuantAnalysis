@@ -1,3 +1,4 @@
+import configuration.RESTController;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
@@ -6,7 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import javax.ws.rs.core.Application;
 
 /**
- * Created by Aditya Srinivasan on 2/24/18.
+ * Created by Aditya Srinivasan
  */
 public class RestControllerTests extends JerseyTest {
 	

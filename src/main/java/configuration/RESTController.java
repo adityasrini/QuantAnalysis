@@ -1,10 +1,12 @@
+package configuration;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
- * @author Aditya Srinivasan on 2/24/18.
+ * @author Aditya Srinivasan
  */
 
 @Path("/hello")
