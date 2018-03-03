@@ -28,9 +28,10 @@ hs_err_pid*
 #Certain IDEA directories and files
 .idea/libraries/*
 .idea/artifacts/*
+.idea/inspectionProfiles/*
 .idea/datasources/*
-.idea/datasources.xml
-.idea/datasources.local.xml
+.idea/dataSources.xml
+.idea/dataSources.local.xml
 .idea/workspace.xml
 .idea/tasks.xml
 *.iml
