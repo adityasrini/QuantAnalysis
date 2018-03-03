@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="securities_master root" uuid="4232e3d2-24b6-45f8-ab18-0af01ec61200">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/securities_master</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="securities_master - user" uuid="50dfc60b-7035-4b62-b94b-dbee218fb7c8">
+    <data-source source="LOCAL" name="securities_master@localhost" uuid="037c7f69-8147-427b-be7d-4ce2ad6c7216">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

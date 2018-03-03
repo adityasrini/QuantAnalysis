@@ -29,6 +29,8 @@ hs_err_pid*
 .idea/libraries/*
 .idea/artifacts/*
 .idea/datasources/*
+.idea/datasources.xml
+.idea/datasources.local.xml
 .idea/workspace.xml
 .idea/tasks.xml
 *.iml
