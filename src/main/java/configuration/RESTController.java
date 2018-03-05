@@ -5,6 +5,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import data.Equity;
@@ -38,5 +42,22 @@ public class RESTController {
 												.createQuery("from Equity where ticker=:ticker", Equity.class)
 												.setParameter("ticker",equity_ticker)
 												.getSingleResult();
+	}
+	
+	@Path("/jdbcTest")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String testForJdbc()
+			throws URISyntaxException, SQLException
+	{
+		Connection connection = DatabaseAccess.getJdbcConnection();
+		ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM symbol");
+		StringBuilder stringBuilder = new StringBuilder();
+		while (resultSet.next()){
+			stringBuilder.append(resultSet.getArray(3));
+			stringBuilder.append(" ");
+		}
+		resultSet.close();
+		return stringBuilder.toString();
 	}
 }

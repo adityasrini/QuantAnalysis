@@ -7,28 +7,11 @@ import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class DatabaseAccess
 {
 
-	private static Map<String, String> env = System.getenv();
-	private static Map<String, Object> configOverrides = new HashMap<>();
-
-	public DatabaseAccess()
-	{
-		for (String envName : env.keySet())
-		{
-
-			if (envName.contains("HEROKU_POSTGRESQL_WHITE_URL"))
-			{
-				configOverrides.put("javax.persistence.jdbc.url", env.get(envName));
-			}
-			// You can put more code in here to populate configOverrides...
-		}
-	}
-
+	
 	public static Connection getJdbcConnection()
 			throws URISyntaxException, SQLException
 	{
@@ -47,7 +30,7 @@ public class DatabaseAccess
 	public static EntityManager createEntityManager()
 	{
 		
-		return Persistence.createEntityManagerFactory("securities_master",configOverrides)
+		return Persistence.createEntityManagerFactory("securities_master")
 						  .createEntityManager();
 	}
 }
