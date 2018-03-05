@@ -13,8 +13,8 @@ import java.util.Map;
 public class DatabaseAccess
 {
 
-	Map<String, String> env = System.getenv();
-	Map<String, Object> configOverrides = new HashMap<String, Object>();
+	private static Map<String, String> env = System.getenv();
+	private static Map<String, Object> configOverrides = new HashMap<>();
 
 	public DatabaseAccess()
 	{
@@ -46,7 +46,8 @@ public class DatabaseAccess
 
 	public static EntityManager createEntityManager()
 	{
-		return Persistence.createEntityManagerFactory("securities_master")
+		
+		return Persistence.createEntityManagerFactory("securities_master",configOverrides)
 						  .createEntityManager();
 	}
 }
