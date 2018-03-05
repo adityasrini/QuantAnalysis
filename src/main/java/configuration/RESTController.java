@@ -1,14 +1,14 @@
 package configuration;
 
-import data.Equity;
-import data.config.DatabaseAccess;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+
+import data.Equity;
+import data.config.DatabaseAccess;
 
 /**
  * @author Aditya Srinivasan
@@ -27,8 +27,7 @@ public class RESTController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Equity> listOfEquities(){
-		List<Equity> equityList = DatabaseAccess.createEntityManager().createQuery("from Equity", Equity.class).getResultList();
-		return equityList;
+		return DatabaseAccess.createEntityManager().createQuery("from Equity", Equity.class).getResultList();
 	}
 	
 	@Path("/equities/{equity}")
